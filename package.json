@@ -1,0 +1,23 @@
+{
+  "name": "lsbom",
+  "version": "1.0.0",
+  "description": " list contents of a bom file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/finnp/lsbom.git"
+  },
+  "keywords": [
+    "bomfile",
+    "bom"
+  ],
+  "author": "Finn Pauls",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/finnp/lsbom/issues"
+  },
+  "homepage": "https://github.com/finnp/lsbom"
+}
