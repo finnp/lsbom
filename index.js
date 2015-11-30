@@ -84,9 +84,17 @@ function lsbom (data) {
           outFile.group = info2.group
           outFile.user = info2.user
           outFile.mode = info2.mode
-          outFile.modtime = info2.modtime
-          outFile.checksum = info2.checksum
-          outFile.size = info2.size
+          if (info2.type === 1 || info2.type === 3) {
+            outFile.modtime = info2.modtime
+            outFile.checksum = info2.checksum
+            outFile.size = info2.size
+          }
+          if (info2.type === 3) {
+            outFile.linkname = info2.linkName
+          }
+          if (info2.type === 4) {
+            outFile.devType = outFile.checksum
+          }
           files.push(outFile)
         }
         if (paths.forward === 0) {
