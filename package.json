@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/finnp/lsbom/issues"
   },
-  "homepage": "https://github.com/finnp/lsbom"
+  "homepage": "https://github.com/finnp/lsbom",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
 }
