@@ -4,7 +4,7 @@
   "description": " list contents of a bom file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/finnp/lsbom",
   "dependencies": {
     "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "tape": "^4.2.2"
   }
 }
