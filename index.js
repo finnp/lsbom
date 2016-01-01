@@ -159,6 +159,6 @@ function readBomPathInfo2 (buf) {
   info.unknown1 = buf.readUInt8(2 + 5 * 4)
   info.checksum = buf.readUInt32BE(3 + 5 * 4)
   info.linkNameLength = buf.readUInt32BE(3 + 6 * 4)
-  info.linkName = buf.slice(3 + 7 * 4).toString()
+  info.linkName = buf.slice(3 + 7 * 4, buf.length - 1).toString()
   return info
 }
