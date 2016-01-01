@@ -8,9 +8,9 @@ var data = fs.readFileSync(path.join(__dirname, 'Bom'))
 test('lsbom', function (t) {
   var files = lsbom(data)
 
-  t.equals(files.length, 9, 'number of files')
-  t.equals(files.map(function (a) { return a.user }).join(''), '000000000', 'all users 0')
-  t.equals(files.map(function (a) { return a.group }).join(''), '808080808080808080', 'all groups 80')
+  t.equals(files.length, 10, 'number of files')
+  t.equals(files.map(function (a) { return a.user }).join(''), '501501501501501501501501501501', 'all users 501')
+  t.equals(files.map(function (a) { return a.group }).join(''), '20202020202020202020', 'all groups 20')
   var map = {}
   files.forEach(function (file) {
     map[file.filename] = file

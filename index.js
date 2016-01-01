@@ -27,7 +27,6 @@ function lsbom (data) {
     blockPointers[i].address = indexHeaderData.readUInt32BE(4 + i * 8)
     blockPointers[i].length = indexHeaderData.readUInt32BE(8 + i * 8)
   }
-
   var varsData = data.slice(header.varsOffset, header.varsOffset + header.varsLength)
 
   var varsCount = varsData.readUInt32BE(0)
@@ -100,6 +99,7 @@ function lsbom (data) {
         if (paths.forward === 0) {
           paths = 0
         } else {
+          paths.forward++
           paths = readBOMPaths(lookup(paths.forward))
         }
       }
@@ -122,8 +122,7 @@ function readBOMPaths (buffer) {
   paths.forward = buffer.readUInt32BE(4)
   paths.backward = buffer.readUInt32BE(8)
   paths.indices = []
-
-  for (var i = 12; i < buffer.length; i += 8) {
+  for (var i = 12; i < buffer.length - 4; i += 8) {
     var index = {}
     index.index0 = buffer.readUInt32BE(i)
     index.index1 = buffer.readUInt32BE(i + 4)
